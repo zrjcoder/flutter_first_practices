@@ -10,13 +10,25 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // final currentAppTheme = ref.watch();
+    final currentAppTheme = ref.watch(currentAppThemeNotifierProvider);
 
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'BOOK',
-      theme: lightTheme,
+      theme: themeData(
+        currentAppTheme.value == CurrentAppTheme.dark ? darkTheme : lightTheme,
+      ),
+      darkTheme: themeData(darkTheme),
+      themeMode: currentAppTheme.value?.themeMode,
       routerConfig: _appRouter.config(),
+    );
+  }
+
+  ThemeData themeData(ThemeData theme) {
+    return theme.copyWith(
+      colorScheme: theme.colorScheme.copyWith(
+        secondary: lightAccent,
+      ),
     );
   }
 }

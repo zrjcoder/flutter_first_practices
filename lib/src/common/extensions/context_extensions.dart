@@ -9,4 +9,7 @@ extension BuildContextExtensions on BuildContext {
       screenSize.width >= 800 && screenSize.width <= 1200;
 
   bool get isLargeScreen => screenSize.width > 800 && !isMediumScreen;
+
+  bool get isPlatformDarkThemed =>
+      MediaQuery.platformBrightnessOf(this) == Brightness.dark;
 }

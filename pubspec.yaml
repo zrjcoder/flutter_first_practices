@@ -17,6 +17,7 @@ dependencies:
   riverpod_annotation: ^2.3.3
   auto_route: ^7.8.4
   flutter_lints: ^3.0.1
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
   flutter_test:
