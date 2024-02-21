@@ -1,7 +1,2 @@
-import 'package:flutter_application_hello/src/common/common.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-final sharedPreferencesProvider = Provider<SharedPreferences>(
-  (_) => LocalStorage().getSharedPreferences()!,
-);
+export 'shared_preferences_provider.dart';
+export 'dio_provider.dart';

@@ -3,7 +3,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 class LocalStorage {
   static final LocalStorage _instance = LocalStorage._privateConstructor();
 
-  factory LocalStorage() => _instance;
+  factory LocalStorage() {
+    return _instance;
+  }
 
   SharedPreferences? _prefs;
 

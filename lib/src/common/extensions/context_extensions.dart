@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 extension BuildContextExtensions on BuildContext {
+  ThemeData get theme => Theme.of(this);
+
   Size get screenSize => MediaQuery.sizeOf(this);
 
   bool get isSmallScreen => screenSize.width < 800;
